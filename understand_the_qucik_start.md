@@ -55,5 +55,10 @@ Now we have the feature store. If we want to calculate some training data with s
 
 Let's follow step [Step 3c] to materialize the latest features into the online store. Since we have five different dirvers in the original data (the parquet file), the online store will have the records for them. (Somehow, the entity_key columns display as empty here.)
 ![sqlite_latest_fea](imgs/sqlite_online_feature.png). 
+It worths to use the following setting to have pretty print of Sqlite3:
+`
+> .mode column
+> .header on
+`
 
 Summary, this study explains several details of the Feast by following the Quick Start tutorial of feast.dev. Hope it is useful.
