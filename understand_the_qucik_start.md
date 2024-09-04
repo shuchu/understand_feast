@@ -6,6 +6,7 @@ The original tutorial uses a file object as [registry](https://docs.feast.dev/ge
 
 The "example_repo.py" defines several features, and they can be viewd on Feast UI (you can run command "feast ui"). They are:  
 **Feature Services**:
+Feature services are used by the ML model to get it's input. By the definition, a record of the feature service retrieval is a workable input to a ML model and can be used for one prediction. The very simple rule is one feature service per model version.  
 1. driver_activity_v1
 2. driver_activity_v2
 3. dirver_activity_v3
@@ -53,7 +54,7 @@ At the same time, the Feast will create two (empty) tables in the online store o
 
 Now we have the feature store. If we want to calculate some training data with specific entities and selected features, we can follow the example in [Step 3b](https://docs.feast.dev/getting-started/quickstart#step-3b-generating-training-data-or-powering-batch-scoring-models)  as in the Quick Start tutorial.  It will do the calculation in real-time,  which means no data will be written to Feast.
 
-Let's follow step [Step 3c] to materialize the latest features into the online store. Since we have five different dirvers in the original data (the parquet file), the online store will have the records for them. (Somehow, the entity_key columns display as empty here.)
+Let's follow step [Step 3c](https://docs.feast.dev/getting-started/quickstart#step-3c-ingest-batch-features-into-your-online-store) to materialize the latest features into the online store. Since we have five different dirvers in the original data (the parquet file), the online store will have the records for them. (Somehow, the entity_key columns display as empty here.)
 ![sqlite_latest_fea](imgs/sqlite_online_feature.png). 
 It worths to use the following setting to have pretty print of Sqlite3:
 ```
